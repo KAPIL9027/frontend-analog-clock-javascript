@@ -1,0 +1,115 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: linear-gradient(to right, pink,purple);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+.clock {
+    background-color: rgba(255,255,255,0.4);
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid purple;
+}
+
+.number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: purple;
+}
+
+.number1 {
+    --rotation: 30deg;
+}
+
+.number2 {
+    --rotation: 60deg;
+}
+
+.number3 {
+    --rotation: 90deg;
+}
+
+.number4 {
+    --rotation: 120deg;
+}
+.number5 {
+    --rotation: 150deg;
+}
+.number6 {
+    --rotation: 180deg;
+}
+.number7 {
+    --rotation: 210deg;
+}
+.number8 {
+    --rotation: 240deg;
+}
+.number9 {
+    --rotation: 270deg;
+}
+.number10 {
+    --rotation: 300deg;
+}
+.number11 {
+    --rotation: 330deg;
+}
+
+.hand {
+    --rotation: 30;
+    z-index: 10;
+   
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    bottom: 50%;
+    background-color: purple;
+}
+
+.hand.minute {
+    width: 0.6rem;
+    height: 8rem;
+}
+
+.hand.second {
+    width: 0.2rem;
+    height: 9rem;
+    background-color: pink;
+}
+
+.hand.hour {
+    width: 1rem;
+    height: 7rem;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    background-color: purple;
+    left:45%;
+    bottom: 45%;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    z-index:11;
+}
